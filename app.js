@@ -10,6 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+// Require MongoDB Driver
+var MongoClient = require('mongodb');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -30,6 +33,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+// Server information for Cloud9 IDE.
+// Application runs at 'https://claimintent-nealpatrick.c9.io'
+var server = app.listen(process.env.PORT, function(){
+  var host = process.env.IP;
+  var port = process.env.PORT;
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

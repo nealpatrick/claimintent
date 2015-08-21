@@ -1,11 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<form>
+  
+  <h3>Claimant information</h3>
+    <label for="clmtfirst">First Name: </label>
+      <input type="text" name="clmtfirst" id="clmtfirst">
+    <label for="clmtmiddle">Middle Name: </label>
+      <input type="text" name="clmtmiddle" id="clmtmiddle">
+    <label for="clmtlast">Last Name: </label>
+      <input type="text" name="clmtlast" id="clmtlast"><br/>
+    <label for="clmtaddr">Street Address: </label>
+      <input type="text" name="clmtaddr" id="clmtaddr"><br/>
+    <label for="clmtcity">City: </label>
+      <input type="text" name="clmtcity" id="clmtcity">
+    <label for="clmtstate">State: </label>
+      <input type="text" name="clmtstate" id="clmtstate">
+    <label for="clmtzip">ZIP Code: </label>
+      <input type="text" name="clmtzip" id="clmtzip"><br/>
+    <label for="clmthomephn">Home Phone: </label>
+      <input type="tel" name="clmthomephn" id="clmthomephn">
+    <label for="clmtbusphn">Business Phone: </label>
+      <input type="tel" name="clmtbusphn" id="clmtbusphn"><br/>
+    <label for="clmtage">Age: </label>
+      <input type="number" name="clmtage" id="clmtage">
+    <label for="clmtssn">Social Security Number: </label>
+      <input type="text" name="clmtssn" id="clmtssn"><br/>
+    <label for="clmtmarstat">Marital Status: </label>
+      <input type="text" name="clmtmarstat" id="clmtmarstat">
+    <label for="clmtspouse">Spouse's Name: </label>
+      <input type="text" name="clmtspouse" id="clmtspouse"><br/>
+  
+  <h3>Incident information</h3>
+    <label for="incdate">Date of Incident: </label>
+      <input type="date" name="incdate" id="incdate">
+    <label for="inctime">Time of Incident: </label>
+      <input type="time" name="inctime" id="inctime"><br/>
+    <label for="incloc">Location of Incident: </label>
+      <input type="text" name="incloc" id="incloc"><br/>
+    <label for="incdesc">Description of Incident: </label>
+      <input type="text" name="incdesc" id="incdesc"><br/>
+    <label for="propdam">Property Damaged: </label>
+      <input type="text" name="propdam" id="propdam"><br/>
+  
+  <h3>Insurance information</h3>
+    <span>Do you have insurance to cover this loss?</span>
+      <label for="hasinsy">Yes</label>
+        <input type="radio" name="hasins" id="hasinsy">
+      <label for="hasinsn">No</label>
+        <input type="radio" name="hasins" id="hasinsn"><br/>
+    <span>Did you file a claim with your insurance regarding this loss? </span>
+      <label for="insclaimfiledy">Yes</label>
+        <input type="radio" name="insclaimfiled" id="insclaimfiledy">
+      <label for="insclaimfiledn">No</label>
+        <input type="radio" name="insclaimfiled" id="insclaimfiledn"><br/>
+    <label for="insco">Name of Insurance Company: </label>
+      <input type="text" name="insco" id="insco"><br/>
+    <label for="inspolnum">Policy Number: </label>
+      <input type="text" name="inspolnum" id="inspolnum"><br/>
+    <label for="insstart">Effective Start Date:</label>
+      <input type="date" name="insstart" id="insstart"><br/>
+    <label for="insend">Effective End Date:</label>
+      <input type="date" name="insend" id="insend"><br/>
+    <label for="estdam">Estimated Damages: </label>
+      <input type="text" name="estdam" id="estdam"><br/>
+  
+  <h3>Witnesses</h3>  
+    <label for="wit1name">Witness #1: </label>
+      <input type="text" name="wit1name" id="wit1name"><br/>
+    <label for="wit2name">Witness #2: </label>
+      <input type="text" name="wit2name" id="wit2name"><br/>
+    <label for="wit3name">Witness #3: </label>
+      <input type="text" name="wit3name" id="wit3name"><br/>
+  
+  <h3>If anyone was injured, fill in below.</h3>
+    <label for="injname">Name of Injured Party: </label>
+      <input type="text" name="injname" id="injname"><br/>
+    <label for="injaddr">Address: </label>
+      <input type="text" name="injaddr" id="injaddr"><br/>
+    <label for="injdesc">Describe Injuies: </label>
+      <input type="text" name="injdesc" id="injdesc"><br/>
+    <label for="doctor">Attending Doctor: </label>
+      <input type="text" name="doctor" id="doctor"><br/>
+    <label for="hosp">Hospital: </label>
+      <input type="text" name="hosp" id="hosp"><br/>
+    <label for="hospaddr">Hospital Address: </label>
+      <input type="text" name="hospaddr" id="hospaddr"><br/>
+    <label for="occ">Occupation: </label>
+      <input type="text" name="occ" id="occ"><br/>
+    <label for="employer">Employer: </label>
+      <input type="text" name="employer" id="employer"><br/>
+    <span>Time lost from work? </span>
+      <label for="timelosty">Yes</label><input type="radio" name="timelost" value="Yes" id="timelosty">
+      <label for="timelostn">No</label><input type="radio" name="timelost" value="No" id="timelostn"><br/>
+    <span>Specify Dates: </span>
+      <input type="date" name="timeloststart" id="timeloststart"> - <input type="date" name="timelostend" id="timelostend"><br/>
+    <label for="salwk">Salary (Weekly): </label>
+      <input type="text" name="salwk" id="salwk"><br/>
+    <label for="salhr">Salary (Hourly): </label>
+      <input type="text" name="salhr" id="salhr"><br/>
+
+    <h3>Was incident reported?</h3>
+      <label for="increpy">Yes</label><input type="radio" name="increp" value="Yes" id="increpy">
+      <label for="increpn">No</label><input type="radio" name="increp" value="No" id="increpn"><br/>
+    <label for="increpto">To whom? </label>
+      <input type="text" name="increpto" id="increpto"><br/>
+    <label for="increpdate">When? </label>
+      <input type="date" name="increpdate" id="increpdate"><br/></br>
+    <input type="submit" value="Submit" name="submit" id="submit">
+  </form>
+</body>
 </html>
