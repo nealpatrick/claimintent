@@ -2,11 +2,10 @@
 <html>
 <head>
   <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-<form>
-  
+<form id="claimintentform" name="claimintentform" method="post" action="https://claimintent-nealpatrick.c9.io/records">
   <h3>Claimant information</h3>
     <label for="clmtfirst">First Name: </label>
       <input type="text" name="clmtfirst" id="clmtfirst">
@@ -50,14 +49,14 @@
   <h3>Insurance information</h3>
     <span>Do you have insurance to cover this loss?</span>
       <label for="hasinsy">Yes</label>
-        <input type="radio" name="hasins" id="hasinsy">
+        <input type="radio" name="hasins" id="hasinsy" value="y">
       <label for="hasinsn">No</label>
-        <input type="radio" name="hasins" id="hasinsn"><br/>
+        <input type="radio" name="hasins" id="hasinsn" value="n"><br/>
     <span>Did you file a claim with your insurance regarding this loss? </span>
       <label for="insclaimfiledy">Yes</label>
-        <input type="radio" name="insclaimfiled" id="insclaimfiledy">
+        <input type="radio" name="insclaimfiled" id="insclaimfiledy" value="y">
       <label for="insclaimfiledn">No</label>
-        <input type="radio" name="insclaimfiled" id="insclaimfiledn"><br/>
+        <input type="radio" name="insclaimfiled" id="insclaimfiledn" value="n"><br/>
     <label for="insco">Name of Insurance Company: </label>
       <input type="text" name="insco" id="insco"><br/>
     <label for="inspolnum">Policy Number: </label>
@@ -95,18 +94,23 @@
     <label for="employer">Employer: </label>
       <input type="text" name="employer" id="employer"><br/>
     <span>Time lost from work? </span>
-      <label for="timelosty">Yes</label><input type="radio" name="timelost" value="Yes" id="timelosty">
-      <label for="timelostn">No</label><input type="radio" name="timelost" value="No" id="timelostn"><br/>
+      <label for="timelosty">Yes</label>
+        <input type="radio" name="timelost" value="y" id="timelosty">
+      <label for="timelostn">No</label>
+        <input type="radio" name="timelost" value="n" id="timelostn"><br/>
     <span>Specify Dates: </span>
-      <input type="date" name="timeloststart" id="timeloststart"> - <input type="date" name="timelostend" id="timelostend"><br/>
+      <input type="date" name="timeloststart" id="timeloststart"> -
+      <input type="date" name="timelostend" id="timelostend"><br/>
     <label for="salwk">Salary (Weekly): </label>
       <input type="text" name="salwk" id="salwk"><br/>
     <label for="salhr">Salary (Hourly): </label>
       <input type="text" name="salhr" id="salhr"><br/>
 
     <h3>Was incident reported?</h3>
-      <label for="increpy">Yes</label><input type="radio" name="increp" value="Yes" id="increpy">
-      <label for="increpn">No</label><input type="radio" name="increp" value="No" id="increpn"><br/>
+      <label for="increpy">Yes</label>
+        <input type="radio" name="increp" value="y" id="increpy">
+      <label for="increpn">No</label>
+        <input type="radio" name="increp" value="n" id="increpn"><br/>
     <label for="increpto">To whom? </label>
       <input type="text" name="increpto" id="increpto"><br/>
     <label for="increpdate">When? </label>
