@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var app = express();
 
@@ -28,10 +28,13 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use(express.json());
+app.use(express.urlencoded());
 
-// Server information for Cloud9 IDE.
+app.use('/', routes);
+// app.use('/users', users);
+
+/* Server information for Cloud9 IDE. */
 // Application runs at 'https://claimintent-nealpatrick.c9.io'
 var server = app.listen(process.env.PORT, function(){
   var host = process.env.IP;
@@ -68,6 +71,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

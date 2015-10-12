@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* POST a new record */
-router.post('/records', function(req, res, next) {
+router.post('/record', function(req, res, next) {
   // Add a record to the database
   // Connect to MongoDB Server
   var dbUrl = 'mongodb://localhost:27017/claimintentdb'
