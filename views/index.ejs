@@ -1,121 +1,382 @@
+<div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label></label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container>
+                     <label></label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label></label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+   <title>Intent to File Claim</title>
+   <link rel="stylesheet" href="/stylesheets/style.css" />
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+   <script src="app.js"></script>
 </head>
-<body>
-<form id="claimintentform" name="claimintentform" method="post" action="https://claimintent-nealpatrick.c9.io/records">
-  <h3>Claimant information</h3>
-    <label for="clmtfirst">First Name: </label>
-      <input type="text" name="clmtfirst" id="clmtfirst">
-    <label for="clmtmiddle">Middle Name: </label>
-      <input type="text" name="clmtmiddle" id="clmtmiddle">
-    <label for="clmtlast">Last Name: </label>
-      <input type="text" name="clmtlast" id="clmtlast"><br/>
-    <label for="clmtaddr">Street Address: </label>
-      <input type="text" name="clmtaddr" id="clmtaddr"><br/>
-    <label for="clmtcity">City: </label>
-      <input type="text" name="clmtcity" id="clmtcity">
-    <label for="clmtstate">State: </label>
-      <input type="text" name="clmtstate" id="clmtstate">
-    <label for="clmtzip">ZIP Code: </label>
-      <input type="text" name="clmtzip" id="clmtzip"><br/>
-    <label for="clmthomephn">Home Phone: </label>
-      <input type="tel" name="clmthomephn" id="clmthomephn">
-    <label for="clmtbusphn">Business Phone: </label>
-      <input type="tel" name="clmtbusphn" id="clmtbusphn"><br/>
-    <label for="clmtage">Age: </label>
-      <input type="number" name="clmtage" id="clmtage">
-    <label for="clmtssn">Social Security Number: </label>
-      <input type="text" name="clmtssn" id="clmtssn"><br/>
-    <label for="clmtmarstat">Marital Status: </label>
-      <input type="text" name="clmtmarstat" id="clmtmarstat">
-    <label for="clmtspouse">Spouse's Name: </label>
-      <input type="text" name="clmtspouse" id="clmtspouse"><br/>
-  
-  <h3>Incident information</h3>
-    <label for="incdate">Date of Incident: </label>
-      <input type="date" name="incdate" id="incdate">
-    <label for="inctime">Time of Incident: </label>
-      <input type="time" name="inctime" id="inctime"><br/>
-    <label for="incloc">Location of Incident: </label>
-      <input type="text" name="incloc" id="incloc"><br/>
-    <label for="incdesc">Description of Incident: </label>
-      <input type="text" name="incdesc" id="incdesc"><br/>
-    <label for="propdam">Property Damaged: </label>
-      <input type="text" name="propdam" id="propdam"><br/>
-  
-  <h3>Insurance information</h3>
-    <span>Do you have insurance to cover this loss?</span>
-      <label for="hasinsy">Yes</label>
-        <input type="radio" name="hasins" id="hasinsy" value="y">
-      <label for="hasinsn">No</label>
-        <input type="radio" name="hasins" id="hasinsn" value="n"><br/>
-    <span>Did you file a claim with your insurance regarding this loss? </span>
-      <label for="insclaimfiledy">Yes</label>
-        <input type="radio" name="insclaimfiled" id="insclaimfiledy" value="y">
-      <label for="insclaimfiledn">No</label>
-        <input type="radio" name="insclaimfiled" id="insclaimfiledn" value="n"><br/>
-    <label for="insco">Name of Insurance Company: </label>
-      <input type="text" name="insco" id="insco"><br/>
-    <label for="inspolnum">Policy Number: </label>
-      <input type="text" name="inspolnum" id="inspolnum"><br/>
-    <label for="insstart">Effective Start Date:</label>
-      <input type="date" name="insstart" id="insstart"><br/>
-    <label for="insend">Effective End Date:</label>
-      <input type="date" name="insend" id="insend"><br/>
-    <label for="estdam">Estimated Damages: </label>
-      <input type="text" name="estdam" id="estdam"><br/>
-  
-  <h3>Witnesses</h3>  
-    <label for="wit1name">Witness #1: </label>
-      <input type="text" name="wit1name" id="wit1name"><br/>
-    <label for="wit2name">Witness #2: </label>
-      <input type="text" name="wit2name" id="wit2name"><br/>
-    <label for="wit3name">Witness #3: </label>
-      <input type="text" name="wit3name" id="wit3name"><br/>
-  
-  <h3>If anyone was injured, fill in below.</h3>
-    <label for="injname">Name of Injured Party: </label>
-      <input type="text" name="injname" id="injname"><br/>
-    <label for="injaddr">Address: </label>
-      <input type="text" name="injaddr" id="injaddr"><br/>
-    <label for="injdesc">Describe Injuies: </label>
-      <input type="text" name="injdesc" id="injdesc"><br/>
-    <label for="doctor">Attending Doctor: </label>
-      <input type="text" name="doctor" id="doctor"><br/>
-    <label for="hosp">Hospital: </label>
-      <input type="text" name="hosp" id="hosp"><br/>
-    <label for="hospaddr">Hospital Address: </label>
-      <input type="text" name="hospaddr" id="hospaddr"><br/>
-    <label for="occ">Occupation: </label>
-      <input type="text" name="occ" id="occ"><br/>
-    <label for="employer">Employer: </label>
-      <input type="text" name="employer" id="employer"><br/>
-    <span>Time lost from work? </span>
-      <label for="timelosty">Yes</label>
-        <input type="radio" name="timelost" value="y" id="timelosty">
-      <label for="timelostn">No</label>
-        <input type="radio" name="timelost" value="n" id="timelostn"><br/>
-    <span>Specify Dates: </span>
-      <input type="date" name="timeloststart" id="timeloststart"> -
-      <input type="date" name="timelostend" id="timelostend"><br/>
-    <label for="salwk">Salary (Weekly): </label>
-      <input type="text" name="salwk" id="salwk"><br/>
-    <label for="salhr">Salary (Hourly): </label>
-      <input type="text" name="salhr" id="salhr"><br/>
 
-    <h3>Was incident reported?</h3>
-      <label for="increpy">Yes</label>
-        <input type="radio" name="increp" value="y" id="increpy">
-      <label for="increpn">No</label>
-        <input type="radio" name="increp" value="n" id="increpn"><br/>
-    <label for="increpto">To whom? </label>
-      <input type="text" name="increpto" id="increpto"><br/>
-    <label for="increpdate">When? </label>
-      <input type="date" name="increpdate" id="increpdate"><br/></br>
-    <input type="submit" value="Submit" name="submit" id="submit">
-  </form>
+<body ng-app="claimIntent">
+   <div ng-controller="mainControl" layout="column" ng-cloak>
+      <md-content layout-padding>
+         <form id="claimIntentForm" name="claimIntentForm" method="post" action="/records">
+            <section>
+            <h3>Claimant information</h3>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>First Name</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container>
+                     <label>Middle Name</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Last Name</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Street Address</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>City</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>State</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>ZIP Code</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Home Phone</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Business Phone</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Age</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Social Security Number</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Marital Status</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Spouse's Name</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+            </section>
+            
+            <section>   
+            <h3>Incident information</h3>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Date of Incident</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Time of Incident</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Location of Incident</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Description of Incident</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Property Damaged</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+            </section>
+
+            <section>
+            <h3>Insurance information</h3>
+               <p>Do you have insurance to cover this loss?</p>
+                  <md-radio-group ng-model="" class="md-primary">
+                     <md-radio-button value="Y">Yes</md-radio-button>
+                     <md-radio-button value="N">No</md-radio-button>
+                  </md-radio-group>
+               <p>Did you file a claim with your insurance regarding this loss?</p>
+                  <md-radio-group ng-model="" class="md-primary">
+                     <md-radio-button value="Y">Yes</md-radio-button>
+                     <md-radio-button value="N">No</md-radio-button>
+                  </md-radio-group>
+               <div layout layout-sm="column">   
+                  <md-input-container flex>
+                     <label>Name of Insurance Company</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Policy Number</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <div>
+                     <label>Effective Start Date</label>
+                     <md-datepicker ng-model="">
+                  </div>
+                  <div>
+                     <label>Effective End Date</label>
+                     <md-datepicker ng-model="">
+                  </div>
+                  <md-input-container flex>
+                     <label>Estimated Damages</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+            </section>
+            
+            <section>
+            <h3>Witnesses</h3>  
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Witness #1</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Witness #2</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Witness #3</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+            </section>
+            
+            <section>
+            <h3>If anyone was injured, fill in below.</h3>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Name of Injured Party</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Address of Injured Party</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Occupation</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Employer</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Describe Injuries</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Attending Doctor</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-input-container flex>
+                     <label>Hospital</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Hospital Address</label>
+                     <input ng-model="">
+                  </md-input-container>
+               </div>
+               <p>Was time lost from work due to this injury?</p>
+                  <md-radio-group ng-model="" class="md-primary">
+                     <md-radio-button value="Y">Yes</md-radio-button>
+                     <md-radio-button value="N">No</md-radio-button>
+                  </md-radio-group>
+               <p>Specify dates lost.</p>
+               <div>
+                  <span>Starting:
+                     <md-datepicker ng-model="">
+                  </span>
+                  <span>Ending:
+                     <md-datepicker ng-model="">
+                  </span>
+               </div>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>Salary</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <md-radio-group ng-model="" class="md-primary">
+                     <md-radio-button value="H">Hourly</md-radio-button>
+                     <md-radio-button value="W">Weekly</md-radio-button>
+                  </md-radio-group>
+               </div>
+               <p>Was the incident reported?</p>
+                  <md-radio-group ng-model="" class="md-primary">
+                     <md-radio-button value="Y">Yes</md-radio-button>
+                     <md-radio-button value="N">No</md-radio-button>
+                  </md-radio-group>
+               <div layout layout-sm="column">
+                  <md-input-container flex>
+                     <label>To whom?</label>
+                     <input ng-model="">
+                  </md-input-container>
+                  <span>When?
+                     <md-datepicker ng-model="">
+                  </span>
+            </section>
+            
+            <button type="submit" value="Submit" name="submit" id="submit">
+         </form>
+      </md-content>
+   </div>
 </body>
 </html>
+<!--
+                  <label for="clmtfirst">First Name: </label>
+                     <input type="text" name="clmtfirst" id="clmtfirst">
+                  <label for="clmtmiddle">Middle Name: </label>
+                     <input type="text" name="clmtmiddle" id="clmtmiddle">
+                  <label for="clmtlast">Last Name: </label>
+                     <input type="text" name="clmtlast" id="clmtlast"><br/>
+                  <label for="clmtaddr">Street Address: </label>
+                     <input type="text" name="clmtaddr" id="clmtaddr"><br/>
+                  <label for="clmtcity">City: </label>
+                     <input type="text" name="clmtcity" id="clmtcity">
+                  <label for="clmtstate">State: </label>
+                     <input type="text" name="clmtstate" id="clmtstate">
+                  <label for="clmtzip">ZIP Code: </label>
+                     <input type="text" name="clmtzip" id="clmtzip"><br/>
+                  <label for="clmthomephn">Home Phone: </label>
+                     <input type="tel" name="clmthomephn" id="clmthomephn">
+                  <label for="clmtbusphn">Business Phone: </label>
+                     <input type="tel" name="clmtbusphn" id="clmtbusphn"><br/>
+                  <label for="clmtage">Age: </label>
+                     <input type="number" name="clmtage" id="clmtage">
+                  <label for="clmtssn">Social Security Number: </label>
+                     <input type="text" name="clmtssn" id="clmtssn"><br/>
+                  <label for="clmtmarstat">Marital Status: </label>
+                     <input type="text" name="clmtmarstat" id="clmtmarstat">
+                  <label for="clmtspouse">Spouse's Name: </label>
+                     <input type="text" name="clmtspouse" id="clmtspouse"><br/>
+                  <label for="incdate">Date of Incident: </label>
+                     <input type="date" name="incdate" id="incdate">
+                  <label for="inctime">Time of Incident: </label>
+                     <input type="time" name="inctime" id="inctime"><br/>
+                  <label for="incloc">Location of Incident: </label>
+                     <input type="text" name="incloc" id="incloc"><br/>
+                  <label for="incdesc">Description of Incident: </label>
+                     <input type="text" name="incdesc" id="incdesc"><br/>
+                  <label for="propdam">Property Damaged: </label>
+                     <input type="text" name="propdam" id="propdam"><br/>                     
+               <span>Do you have insurance to cover this loss?</span>
+                  <label for="hasinsy">Yes</label>
+                     <input type="radio" name="hasins" id="hasinsy" value="y">
+                  <label for="hasinsn">No</label>
+                     <input type="radio" name="hasins" id="hasinsn" value="n"><br/>
+               <span>Did you file a claim with your insurance regarding this loss? </span>
+                  <label for="insclaimfiledy">Yes</label>
+                     <input type="radio" name="insclaimfiled" id="insclaimfiledy" value="y">
+                  <label for="insclaimfiledn">No</label>
+                     <input type="radio" name="insclaimfiled" id="insclaimfiledn" value="n"><br/>
+               <label for="insco">Name of Insurance Company: </label>
+                  <input type="text" name="insco" id="insco"><br/>
+               <label for="inspolnum">Policy Number: </label>
+                  <input type="text" name="inspolnum" id="inspolnum"><br/>
+               <label for="insstart">Effective Start Date:</label>
+                  <input type="date" name="insstart" id="insstart"><br/>
+               <label for="insend">Effective End Date:</label>
+                  <input type="date" name="insend" id="insend"><br/>
+               <label for="estdam">Estimated Damages: </label>
+                  <input type="text" name="estdam" id="estdam"><br/>
+                  <label for="wit1name">Witness #1: </label>
+                  <input type="text" name="wit1name" id="wit1name"><br/>
+               <label for="wit2name">Witness #2: </label>
+                  <input type="text" name="wit2name" id="wit2name"><br/>
+               <label for="wit3name">Witness #3: </label>
+                  <input type="text" name="wit3name" id="wit3name"><br/>
+
+<label for="injname">Name of Injured Party: </label>
+                  <input type="text" name="injname" id="injname"><br/>
+               <label for="injaddr">Address: </label>
+                  <input type="text" name="injaddr" id="injaddr"><br/>
+               <label for="injdesc">Describe Injuries: </label>
+                  <input type="text" name="injdesc" id="injdesc"><br/>
+               <label for="doctor">Attending Doctor: </label>
+                  <input type="text" name="doctor" id="doctor"><br/>
+               <label for="hosp">Hospital: </label>
+                  <input type="text" name="hosp" id="hosp"><br/>
+               <label for="hospaddr">Hospital Address: </label>
+                  <input type="text" name="hospaddr" id="hospaddr"><br/>
+               <label for="occ">Occupation: </label>
+                  <input type="text" name="occ" id="occ"><br/>
+               <label for="employer">Employer: </label>
+                  <input type="text" name="employer" id="employer"><br/>
+<span>Time lost from work? </span>
+                  <label for="timelosty">Yes</label>
+                     <input type="radio" name="timelost" value="y" id="timelosty">
+                  <label for="timelostn">No</label>
+                     <input type="radio" name="timelost" value="n" id="timelostn"><br/>
+<span>Specify Dates: </span>
+                  <input type="date" name="timeloststart" id="timeloststart"> -
+                  <input type="date" name="timelostend" id="timelostend"><br/>
+
+<label for="salwk">Salary (Weekly): </label>
+                  <input type="text" name="salwk" id="salwk"><br/>
+               <label for="salhr">Salary (Hourly): </label>
+                  <input type="text" name="salhr" id="salhr"><br/>
+
+            <h3>Was the incident reported?</h3>
+                  <label for="increpy">Yes</label>
+                     <input type="radio" name="increp" value="y" id="increpy">
+                  <label for="increpn">No</label>
+                     <input type="radio" name="increp" value="n" id="increpn"><br/>
+<label for="increpto">To whom? </label>
+                  <input type="text" name="increpto" id="increpto"><br/>
+               <label for="increpdate">When? </label>
+                  <input type="date" name="increpdate" id="increpdate"><br/></br>
+-->

@@ -4,31 +4,31 @@ var router = express.Router();
 // Require wkhtmltopdf (Webkit HTML to PDF)
 var wkhtmltopdf = require('wkhtmltopdf');
 
-// Require MongoDB driver
-var mongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
-  
-// Require PDFKit
-// var PDFdoc = require('pdfkit');
-
-/* GET home page. */
+// Require MongoDB driver, assert
+var mongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+   
+/* GET home page */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Claim Intent' });
+   res.render('index', { title: 'Claim Intent' });
 });
 
 /* POST a new record */
 router.post('/record', function(req, res, next) {
-  // Add a record to the database
-  // Connect to MongoDB Server
-  var dbUrl = 'mongodb://localhost:27017/claimintentdb'
-  mongoClient.connect(dbUrl, function(err, db){
-    assert.equal(null, err);
-    console.log("Connected correctly to server.");
-    db.close();
-  });
+   // Add a record to the database
+   // Connect to MongoDB Server
+   var dbUrl = 'mongodb://localhost:27017/claimintentdb'
+   mongoClient.connect(dbUrl, function(err, db){
+      assert.equal(null, err);
+      console.log("Connected correctly to server.");
+      db.close();
+   });
 
-  
-  /* Testing PDFKit functionality */
+//  Parse data from body to 
+   
+/*  Testing PDFKit functionality  */
+//  Require PDFKit
+//  var PDFdoc = require('pdfkit');
 //  var doc = new PDFdoc;
 //  var clmtfirst = req.body.clmtfirst;
 //  var stream = fs.createWriteStream('/generated/' + clmtfirst +'.pdf');
@@ -39,11 +39,11 @@ router.post('/record', function(req, res, next) {
 //  res.send(buff);
 //  doc.end();
 
-  /* Testing wkhtmltopdf functionality */
-  
-  
+/* Testing wkhtmltopdf functionality */
+   
+   
 //  console.log('File saved.');
-  res.redirect('/');
+   res.redirect('/');
 });
 
 module.exports = router;
